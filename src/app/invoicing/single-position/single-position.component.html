@@ -1,20 +1,29 @@
+
 <th scope="row">
   {{lp}}
 </th>
+
 <td>
+  <div class="input-group">
+      <label for="validationDefault03"></label>
+    <input [(ngModel)]=position.netto type="number" id="validationDefault03" class="form-control "    required />
+    
+  </div>
+  
+</td>
+<td>
+  <div class="form-row">
   <input 
-    class="form-control" type="text" 
+    class="form-control " type="text" 
     name="name" 
     [value]=position.name 
     (keyup)=handleAutocompleteName($event) 
     autocomplete="off"
   />
+</div>
   <ul class="single-position__suggestion-list" *ngIf="suggestions.length > 0">
     <li class="single-position__suggestion-item" *ngFor="let suggestion of suggestions" (click)=selectSuggestion(suggestion)>{{ suggestion.label }}</li>
   </ul>
-</td>
-<td>
-  <input class="form-control" type="number" name="quantity" [value]=position.quantity [(ngModel)]=position.quantity/>
 </td>
 <td>
   <select class="form-control" name="unit" [value]=position.unit [(ngModel)]=position.unit>
@@ -23,7 +32,8 @@
 </td>
 <td>
   <div class="input-group">
-    <input [(ngModel)]=position.netto type="number" class="form-control" name="netto" [value]=position.netto (change)=handleChangeNetto($event) />
+      <label for="validationDefault03"></label>
+    <input [(ngModel)]=position.netto type="number" id="validationDefault03" class="form-control " name="netto" [value]=position.netto (change)=handleChangeNetto($event)  required />
     <div class="input-group-append">
       <span class="input-group-text">PLN</span>
     </div>
@@ -37,13 +47,13 @@
 </td>
 <td>
   <div class="input-group">
-    <input [(ngModel)]=position.brutto type="text" class="form-control" name="brutton" [value]=position.brutto (change)=handleChangeBrutto($event)/>
+    <input [(ngModel)]=position.brutto type="text" class="form-control " name="brutton" [value]=position.brutto (change)=handleChangeBrutto($event)/>
     <div class="input-group-append">
       <span class="input-group-text">PLN</span>
     </div>
   </div>
 <td>
-  <button (click)=removePosition()>
+  <button class="trash" (click)=removePosition()>
     <i class="fa fa-trash"></i>
   </button>
 </td>

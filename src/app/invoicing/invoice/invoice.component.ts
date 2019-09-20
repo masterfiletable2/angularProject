@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Invoice, InvoiceSummary } from '../model/item';
+import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-invoice',
@@ -25,8 +26,10 @@ export class InvoiceComponent implements OnInit {
   recalculateSummery(invoice: Invoice): InvoiceSummary {
     const brutto = invoice.items.map(i => i.brutto).reduce((sum, i) => sum + i, 0);
     const netto = invoice.items.map(i => i.netto).reduce((sum, i) => sum + i, 0);
+   
 
     return {
+     
       brutto: brutto,
       netto: netto,
       tax: this.round(brutto - netto, 2)

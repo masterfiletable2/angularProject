@@ -1,29 +1,48 @@
-<table class="table">
-    <thead>
+<div class="content">
+  <div class="dane">
+    <form>
+      <div class="form-row">
+
+
+        <div class="form-group">
+          <input type="date" name="bday" max="2099-12-31" min="1900-01-01" class="form-control" />
+        </div>
+
+
+        <input type="text" class="form-control" placeholder="Company" name="firma" />
+
+      </div>
+    </form>
+  </div>
+
+
+
+  <table class="table">
+      <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Item name</th>
-        <th scope="col">Quantity</th>
+        <th scope="col">ID</th>
+        <th scope="col">Invoice number</th>
+        <th scope="col">Contractor</th>
         <th scope="col">Unit</th>
-        <th scope="col">netto</th>
-        <th scope="col">tax</th>
-        <th scope="col">gross</th>
-        <th scope="col"></th>
+        <th scope="col">Netto</th>
+        <th scope="col">Tax</th>
+        <th colspan="2" scope="col">Brutto</th>
       </tr>
     </thead>
     <tbody>
-      <app-single-position
-        *ngFor="let position of positions; let index = index"
-        [position]=position
-        [lp]=index+1
-        (positionChanged)=handlePositionChanged($event)
-        (itemRemoved)=removePosition($event)
-      ></app-single-position>
+      <app-single-position *ngFor="let position of positions; let index = index"
+        (positionChanged)=handlePositionChanged($event) (itemRemoved)=removePosition($event) [position]=position
+        [lp]=index+1>
+      </app-single-position>
     </tbody>
   </table>
   <div class="invoice-positions__actions">
-    <button (click)="addPosition()" type="button" class="btn btn-primary invoice-positions__action">
-      add position
-      <i class="fa fa-plus"></i>
-    </button>
+    <button (click)="addPosition()" type="button" class="btn btn-dark invoice-positions__action"><i
+        class="fa fa-plus"></i> Add position</button>
+
   </div>
+  <div class="invoice-positions__actions2">
+    <button (click)="addPosition()" type="button" class="btn btn-success invoice-positions__action"><i
+        class="fa fa-minus"></i> Save</button>
+  </div>
+</div>

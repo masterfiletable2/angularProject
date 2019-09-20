@@ -3,9 +3,23 @@
         display: flex;   
         align-items: center;
         justify-content: center
+        
     }
 
     &__add-action {
         margin: auto
     }
+
+}
+
+
+
+.content, .form-row {
+    padding: 2rem;
+}
+
+
+.invoice-positions__actions2{
+    text-align: center;
+    margin:1rem;
 }

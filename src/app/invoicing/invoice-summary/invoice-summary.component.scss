@@ -1,0 +1,20 @@
+.list-group,.results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: row;
+}
+
+.list-group-item {
+    border: none;
+    display: flex;
+    padding:0 2rem;
+    
+}
+
+.list-group-item h5 {
+    padding:0;
+    line-height: 1.2rem;
+    padding-right: 1rem;
+}

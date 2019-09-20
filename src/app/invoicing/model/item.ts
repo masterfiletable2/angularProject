@@ -27,7 +27,7 @@ export interface InvoiceItem {
 
 export enum Unit {
     service = 'service',
-    good = 'good',
+    szt = 'szt.',
     hour = 'hour'
 }
 

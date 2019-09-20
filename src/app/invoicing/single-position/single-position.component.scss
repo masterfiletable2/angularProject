@@ -24,3 +24,17 @@ input[type="number"]::-webkit-outer-spin-button {
         }
     }
 }
+
+
+.trash{
+    background: #999;
+    border:none;
+    width: 38px;
+    height:38px;
+    border-radius: 3px;
+&:hover{
+    background: #333;
+    color:#fff;
+}
+}
+

@@ -26,7 +26,7 @@ export class SinglePositionComponent implements OnInit {
   private lp: number;
 
   private availableUnits: Unit[] = [
-    Unit.good,
+    Unit.szt,
     Unit.hour,
     Unit.service
   ];
