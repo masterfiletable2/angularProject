@@ -1,0 +1,16 @@
+.content, .form-row{
+ padding: 1rem;   
+}
+
+.termsAndConditions {
+    display: flex;
+}
+
+.termsAndConditions .form-check {
+    padding: 2.5rem;
+}
+
+.termsAndConditions button {
+    display: flex;
+    align-self: center;
+}
