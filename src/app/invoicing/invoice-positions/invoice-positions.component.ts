@@ -28,6 +28,11 @@ export class InvoicePositionsComponent implements OnInit {
     this.itemsChanged.next(this.positions);
   }
 
+  itemsRemoved (position: InvoiceItem, index): void {
+    this.positions.length = 0;
+  }
+
+
   removePosition(position: InvoiceItem): void {
     this.positions = this.positions.filter(p => p.id !== position.id);
     this.itemsChanged.next(this.positions);
